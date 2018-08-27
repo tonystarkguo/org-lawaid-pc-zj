@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>
+    打印文书
+  </title>
+  <link href="./print.css" rel="stylesheet">
+</head>
+
+<body style="margin: 0px; background-color: #C0C0C0">
+  <form name="docForm" method="post" action="/saveForm" id="docForm" autocomplete="off">
+    <div>
+      <input type="hidden" name="" id="" value="">
+    </div>
+    <div id="printContainer"></div>
+  </form>
+  <script src="./jquery-1.8.3.min.js"></script>
+  <script src="./layer.js"></script>
+  <script src="./jquery.jqprint-0.3.js"></script>
+  <script src="./print.js"></script>
+  <script>
+    $(document).ready(function () {
+      //获取文书内容
+      var url = window.location.href
+      var handledUrl = url.split('?')[1]
+      var domin = ''
+      if (url.match(/[a-zA-z]+:\/\/[^/]*/)) {
+        domin = url.match(/[a-zA-z]+:\/\/[^/]*/)[0]
+        url = url.slice(domin.length)
+      }
+      var params = {}
+      var reqUrl = domin + '/orm/zhejiang/material/exportPrintHtml'
+      var postUrl = domin + '/orm/zhejiang/material/exportHpApplyHtml'
+
+      if (url.indexOf('fromLocalStorage') > -1) {
+        //打印表单的临时数据
+        var rqStr = localStorage.getItem('printReqParams')
+        var rqJson = JSON.parse(rqStr)
+        httpPost(postUrl, rqJson, function (jdata) {
+          var htmlStr = jdata.data
+          buildPrintForm([htmlStr])
+        })
+        // var printHtml = localStorage.getItem('printHtml')
+        // localStorage.removeItem('printHtml')// 不能删掉，删掉后如果刷新就有问题了。
+        // buildPrintForm(printHtml)
+      } else {
+        if (url.indexOf('defaultFileAddr') > -1 && url.indexOf('tCaseMaterialStorageId') > -1) {
+		defaultFileAddr = decodeURIComponent(url.split('defaultFileAddr=')[1])
+		params.defaultFileAddr = decodeURIComponent(defaultFileAddr.split('&')[0])
+		params.tCaseMaterialStorageId = decodeURIComponent(defaultFileAddr.split('tCaseMaterialStorageId=')[1])
+        httpGet(reqUrl, params, function (jdata) {
+          var printData = jdata.data || {}
+          buildPrintForm(printData.emptyDocs, printData.genDocs)
+
+          // if (htmlStr.indexOf("erWeiMa") <= -1) {
+          //   $(".btnHideMa").css("display", "none");
+          // }
+
+        })
+		}else{
+        
+
+           if (url.indexOf('defaultFileAddr') > -1) {
+             $('.tr-empty-doc').hide()
+             $('.tr-save').hide()
+             $('.tr-seal').hide()
+             $('.tr-cancel-seal').hide()
+             params.defaultFileAddr = decodeURIComponent(url.split('defaultFileAddr=')[1])
+             reqUrl = domin + '/orm/zhejiang/material/exportBlankHtml'
+           } else {
+             params.tCaseMaterialStorageId = url.split('tCaseMaterialStorageId=')[1]
+             reqUrl = domin + '/orm/zhejiang/material/exportDoc/getCateLayHtmDress'
+           }
+           httpGet(reqUrl, params, function (jdata) {
+             var htmlStr = jdata.data
+             buildTempPrintForm(htmlStr)
+             if (htmlStr.indexOf("erWeiMa") <= -1) {
+               $(".btnHideMa").css("display", "none");
+             }
+           })
+           }
+		
+      }
+    });
+  </script>
+</body>
+
+</html>

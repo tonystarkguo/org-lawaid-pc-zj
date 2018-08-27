@@ -1,0 +1,6 @@
+{
+  "name": "FlowDetail",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./FlowDetail.js"
+}

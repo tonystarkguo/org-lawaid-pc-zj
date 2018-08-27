@@ -1,0 +1,89 @@
+@import "../../themes/vars.less";
+
+.header {
+  :global .ant-menu-horizontal {
+    & > .ant-menu-submenu {
+      float: right;
+    }
+    border: none;
+    display: inline-block;
+  }
+  box-shadow: @shadow-2;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  height: 47px;
+  background-color: #fff;
+  z-index: 2;
+
+  .rightWarpper {
+    display: flex;
+    padding-right: 16px;
+  }
+
+  .leftWarpper{
+    display: flex;
+  }
+
+  .keyinput{
+    display: flex;
+    padding-left: 16px;
+    justify: "space-around";
+  }
+  .searchinput{
+    height: 35px;
+    width: 400px
+  }
+  .button {
+    width: 47px;
+    height: 47px;
+    line-height: 47px;
+    text-align: center;
+    font-size: 18px;
+    cursor: pointer;
+    transition: @transition-ease-in;
+
+    &:hover {
+      color: @primary-color;
+      background-color: fade(@primary-color, 15%);
+    }
+  }
+  :global .search-input-wrapper{
+    padding-top: 5px;
+  }
+}
+
+.popovermenu {
+  width: 280px;
+  margin-left: 6px;
+
+  :global .ant-popover-inner-content {
+    padding: 0;
+
+    .ant-menu-inline .ant-menu-item,
+    .ant-menu-vertical .ant-menu-item {
+      border-right: 0;
+      height: 48px;
+      line-height: 48px;
+    }
+
+    .ant-menu-inline .ant-menu-item-selected,
+    .ant-menu-inline .ant-menu-selected {
+      border-right: 0;
+    }
+  }
+}
+
+.dynamicKey{
+  line-height: 46px;
+  font-weight: 700;
+}
+
+.editBtn{
+  margin-right: 10px;
+}
+
+.editBtn:hover{
+  cursor: pointer;
+  color: #108ee9;
+}

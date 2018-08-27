@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="full-screen" content="yes">
+    <meta name="browsermode" content="application">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="x5-page-mode" content="app">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="./judgeOpinion.css">
+    <title>法律援助案件法官意见征询</title>
+</head>
+
+<body>
+  <div class="card">
+    <h2>法律援助案件详情</h2>
+    <div class="info">
+      <p>案号：<span id="caseNum"></span></p>
+      <p>受援人：<span id="rpName"></span></p>
+      <p>案由：<span id="caseReason"></span></p>
+      <p>承办人：<span id="hpName"></span></p>
+      <p>承办机构：<span id="hpOrg"></span></p>
+    </div>
+  </div>
+  <div class="card">
+    <h2>法官意见征询</h2>
+    <form class="list">
+      <div class="item">
+        <p>1、诉讼礼仪（遵守法庭秩序；尊重诉讼参加人；着装得体）</p>
+        <input type="radio" name="dicEtiquette" id="dicEtiquette1" value="1" checked="checked" />
+        <label for="dicEtiquette1">满意</label>
+        <input type="radio" name="dicEtiquette" id="dicEtiquette2" value="2" />
+        <label for="dicEtiquette2">基本满意</label> 
+        <input type="radio" name="dicEtiquette" id="dicEtiquette3" value="3" />
+        <label for="dicEtiquette3">不满意</label>
+      </div>
+      <div class="item">
+        <p>2、专业素养（语言表达准确；办案思路清晰；引用法律适当；应对变化恰当）</p>
+        <input type="radio" name="dicAccomplishment" id="dicAccomplishment1" value="1" checked="checked" />
+        <label for="dicAccomplishment1">满意</label>
+        <input type="radio" name="dicAccomplishment" id="dicAccomplishment2" value="2" />
+        <label for="dicAccomplishment2">基本满意</label> 
+        <input type="radio" name="dicAccomplishment" id="dicAccomplishment3" value="3" />
+        <label for="dicAccomplishment3">不满意</label>
+      </div>
+      <div class="item">
+        <p>3、敬业精神（工作态度认真；办案尽职尽责）</p>
+        <input type="radio" name="dicDedication" id="dicDedication1" value="1" checked="checked" />
+        <label for="dicDedication1">满意</label>
+        <input type="radio" name="dicDedication" id="dicDedication2" value="2" />
+        <label for="dicDedication2">基本满意</label> 
+        <input type="radio" name="dicDedication" id="dicDedication3" value="3" />
+        <label for="dicDedication3">不满意</label>
+      </div>
+      <div class="item">
+        <p>4、法官意见</p>
+        <textarea rows="3" cols="20" id="suggestion"></textarea>
+      </div>
+      <div class="submit">
+        <button type="button" id="submit">提交</button>
+      </div>
+    </form>
+  </div>
+</body>
+<script type="text/javascript" src="https://as.alipayobjects.com/g/component/fastclick/1.0.6/fastclick.js"></script>
+<script src="./jquery-1.8.3.min.js"></script>
+<script>
+  FastClick.attach(document.body);
+</script>
+<script src="./judgeOpinion.js"></script>
+</html>

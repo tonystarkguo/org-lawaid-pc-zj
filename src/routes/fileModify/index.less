@@ -1,0 +1,228 @@
+.list {
+  position: relative;
+  z-index: 0;
+  text-align: center;
+  &::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+.item {
+  position: relative;
+  float: left;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 10px;
+  cursor: move;
+  width: calc(~"20% - 20px");
+  .icon {
+    transition: all 0.3s ease-in-out;
+    position: absolute;
+    font-size: 22px;
+    color: #fff;
+    cursor: pointer;
+    top: 15px;
+    background-color: rgba(0,0,0,0.5);
+    padding: 5px;
+    border-radius: 5px;
+    opacity: 0;
+  }
+  &:hover {
+    .icon {
+      opacity: 0.5;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+
+.tabs {
+  padding-left: 20px;
+  min-height: 500px;
+    :global {
+      .ant-tabs-tab-disabled {
+        // background-color: #eee!important;
+        color: #ddd!important;
+      }
+      .ant-tabs-tab {
+        width: 180px;
+        word-break:break-all;
+        white-space: initial;
+        p {
+          word-break:break-all;
+        }
+      }
+    }
+}
+.dragHandle {
+  width: 100%;
+  height: 150px;
+}
+.btns {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 60px;
+  margin-top: 20px;
+  > button {
+    margin: 0 5px;
+  }
+}
+
+.Piccenter{
+  margin-top: 10px;
+  text-align: center;
+}
+.Picfl{
+  float: left;
+}
+.PicpicWrap{
+  width: 100%;
+}
+.ml125{
+  margin-left: -125px
+}
+.PicpicWrap img{
+  width: 100%;
+  height: 100%;
+}
+.cover {
+  position: relative;
+  min-height: 100vh;
+  background-color: #626262;
+  .btns {
+    padding: 10px 5px;
+    justify-content: space-around;
+    .check {
+      background-color: #438dc0;
+    }
+    > div {
+      background-color: #777;
+      color: #fff;
+      padding: 5px 10px;
+      margin: 0 5px;
+      border: 5px solid #eee;
+      cursor: pointer;
+    }
+    > div:nth-child(1) {
+      border-top-right-radius: 10px;
+      border-bottom-left-radius: 10px;
+    }
+    > div:nth-child(2) {
+      border-top-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+  }
+  .line {
+    border-bottom: 3px solid #fff;
+    margin: 5px 0;
+  }
+  .caseInfo {
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+    left: 10px;
+    width: calc(~"100% - 20px");
+    padding: 10px;
+    .caseInfoTitle {
+      font-size: 26px;
+      margin-bottom: 20px;
+      .num {
+        font-size: 18px;
+      }
+    }
+    .caseInfoPerson {
+      font-size: 12px;
+      margin-bottom: 20px;
+    }
+  }
+}
+.num20{
+  width:20%
+}
+.content {
+  height: 100vh;
+  overflow-y: auto; 
+}
+
+.classEdit {
+  .classControl {
+    display: flex;
+    p {
+      background-color: #438dc0;
+      color: #fff;
+      font-size: 16px;
+      line-height: 2;
+    }
+    p:nth-child(1) {
+      width: 85%;
+      padding-left: 10px;
+    }
+    p:nth-child(2) {
+      width: 14%;
+      text-align: center;
+      margin-left: 1%;
+    }
+  }
+  .classBtns {
+    display: flex;
+    padding-bottom: 10px;
+    justify-content: center;
+    button {
+      margin: 0 10px;
+    }
+  }
+  .addClass {
+    display: flex;
+    padding-bottom: 10px;
+    input {
+      height: 30px;
+    }
+    button {
+      height: 30px;
+      margin-left: 30px;
+    }
+  }
+}
+.classIcon {
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15%;
+  cursor: pointer;
+  color: #f99;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    color: #f11;
+  }
+}
+.classItem {
+  margin: 10px 0;
+  display: flex;
+}
+
+.classTitle {
+  font-size: 16px;
+  line-height: 2;
+  padding-left: 10px;
+  border: 1px solid #ddd;
+  display: inline-block;
+  width: 85%;
+  cursor: row-resize;
+  transition: all 0.1s ease-in-out;
+  &:hover {
+    box-shadow: 0px 0px 5px #438dc0;
+  }
+}
+
+:global {
+  .sortableHelper {
+    z-index: 1200;
+  }
+}

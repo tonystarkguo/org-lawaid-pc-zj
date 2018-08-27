@@ -1,0 +1,6 @@
+{
+  "name": "AreaController",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./AreaController.js"
+}

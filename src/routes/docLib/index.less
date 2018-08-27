@@ -1,0 +1,51 @@
+.home {
+  .up {
+    background-color: #fff;
+    padding: 20px 0;
+    .img {
+      height: 200px;
+      overflow: hidden;
+    }
+    .dynamic {
+      height: 200px;
+      > div {
+        width: 40%;
+        height: 40%;
+        float: left;
+        box-sizing: border-box;
+        margin: 0 10% 10% 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      p {
+        text-align: center;
+        flex-basis: 100%;
+        line-height: 1;
+      }
+      p:nth-child(1) {
+        color: #0df;
+        font-size: 36px;
+      }
+    }
+    .notice {
+      padding: 10px;
+      height: 200px;
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+      }
+      .list {
+        a {
+          display: block;
+          line-height: 1.7;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+}

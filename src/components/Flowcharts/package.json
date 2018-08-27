@@ -1,0 +1,6 @@
+{
+  "name": "Flowcharts",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./Flowcharts.js"
+}

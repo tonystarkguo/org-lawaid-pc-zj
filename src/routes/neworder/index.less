@@ -1,0 +1,49 @@
+.content {
+  line-height: 2.4;
+  font-size: 13px;
+  padding: 20px;
+  margin:20px 0;
+  background: #fff;
+}
+
+.dateNote {
+	background-color: #ddd;
+	height: 40%;
+	width: 100%;
+	margin: 10% 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 5px;
+}
+
+.dateNote p {
+	font-size: 14px;
+}
+
+.timeModalContent {
+	display: flex;
+	justify-content: space-around;
+	.morning,
+	.afternoon {
+		margin-bottom: 15px;
+		flex:1;
+		p ,span{
+			text-align: center;
+			width: 100%;
+		}
+	}
+	.RadioButton {
+		width: 95%;
+		box-sizing: border-box;
+		margin: 5px auto;		
+	    border-radius: 0;
+	    border-left: 1px solid #e5e5e5;
+	}
+}
+
+:global {
+	.ant-fullcalendar-fullscreen .ant-fullcalendar-header .ant-radio-group {
+		display: none;
+	}
+}

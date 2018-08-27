@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="full-screen" content="yes">
+    <meta name="browsermode" content="application">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="x5-page-mode" content="app">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="./aidEvaluate.css">
+    <title>法律援助案件受援人评价</title>
+</head>
+
+<body>
+  <div class="card">
+    <h2>法律援助案件详情</h2>
+    <div class="info">
+      <p>案号：<span id="caseNum"></span></p>
+      <p>受援人：<span id="rpName"></span></p>
+      <p>案由：<span id="caseReason"></span></p>
+      <p>承办人：<span id="hpName"></span></p>
+      <p>承办机构：<span id="hpOrg"></span></p>
+    </div>
+  </div>
+  <div class="card">
+    <h2>受援人评价</h2>
+    <form class="list">
+      <div class="item">
+        <p>1、承办人服务态度</p>
+        <input type="radio" name="dicAttitude" id="dicAttitude1" value="1" checked="checked" />
+        <label for="dicAttitude1">满意</label>
+        <input type="radio" name="dicAttitude" id="dicAttitude2" value="2" />
+        <label for="dicAttitude2">基本满意</label> 
+        <input type="radio" name="dicAttitude" id="dicAttitude3" value="3" />
+        <label for="dicAttitude3">不满意</label>
+      </div>
+      <div class="item">
+        <p>2、办案过程中沟通交流情况</p>
+        <input type="radio" name="dicInterflow" id="dicInterflow1" value="1" checked="checked" />
+        <label for="dicInterflow1">满意</label>
+        <input type="radio" name="dicInterflow" id="dicInterflow2" value="2" />
+        <label for="dicInterflow2">基本满意</label> 
+        <input type="radio" name="dicInterflow" id="dicInterflow3" value="3" />
+        <label for="dicInterflow3">不满意</label>
+      </div>
+      <div class="item">
+        <p>3、承办人维护合法权益情况</p>
+        <input type="radio" name="dicMaintain" id="dicMaintain1" value="1" checked="checked" />
+        <label for="dicMaintain1">满意</label>
+        <input type="radio" name="dicMaintain" id="dicMaintain2" value="2" />
+        <label for="dicMaintain2">基本满意</label> 
+        <input type="radio" name="dicMaintain" id="dicMaintain3" value="3" />
+        <label for="dicMaintain3">不满意</label>
+      </div>
+      <div class="item">
+        <p>4、对案件结果是否满意</p>
+        <input type="radio" name="dicResult" id="dicResult1" value="1" checked="checked" />
+        <label for="dicResult1">满意</label>
+        <input type="radio" name="dicResult" id="dicResult2" value="2" />
+        <label for="dicResult2">基本满意</label> 
+        <input type="radio" name="dicResult" id="dicResult3" value="3" />
+        <label for="dicResult3">不满意</label>
+      </div>
+        <div class="item">
+        <p>5、总体评价</p>
+        <input type="radio" name="dicSummary" id="dicSummary1" value="1" checked="checked" />
+        <label for="dicSummary1">满意</label>
+        <input type="radio" name="dicSummary" id="dicSummary2" value="2" />
+        <label for="dicSummary2">基本满意</label> 
+        <input type="radio" name="dicSummary" id="dicSummary3" value="3" />
+        <label for="dicSummary3">不满意</label>
+      </div>
+      <div class="behavior">
+      	<span>是否有违规收受财物行为：</span>
+      	<input type="checkbox" id="isIllegal" name="isIllegal" type="checkbox" />
+        <label for="isIllegal"></label>
+      </div>
+      <div class="submit">
+        <button type="button" id="submit">提交</button>
+      </div>
+    </form>
+  </div>
+</body>
+<script type="text/javascript" src="https://as.alipayobjects.com/g/component/fastclick/1.0.6/fastclick.js"></script>
+<script src="./jquery-1.8.3.min.js"></script>
+<script>
+  FastClick.attach(document.body);
+</script>
+<script src="./aidEvaluate.js"></script>
+</html>
